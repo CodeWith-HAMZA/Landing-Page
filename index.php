@@ -55,9 +55,9 @@ if (isset($_GET["id"])) {
 
   // Execute the DELETE query
   if ($conn->query($sql) === TRUE) {
-      echo "Note deleted successfully.";
+      echo "Note deleted successfully:";
   } else {
-      echo "Error deleting note: " . $conn->error;
+      echo "Error deleting note:" . $conn->error;
   }
 }
 
@@ -134,12 +134,7 @@ if (isset($_GET["id"])) {
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td><a href="/">Edit</a> <a href="/">Delete</a></td>
-    </tr>
+    
 
     <?php 
     
@@ -159,7 +154,7 @@ if (isset($_GET["id"])) {
             <td>$title</td>
             <td>$description</td>
             <td>
-            <button type='button' id='' class='editbtn btn btn-primary' data-bs-toggle='modal' data-bs-target='#exampleModal'>
+            <button type='button' class='editbtn btn btn-primary' data-bs-toggle='modal' data-bs-target='#exampleModal'>
              edit
           </button>
           
@@ -184,7 +179,7 @@ if (isset($_GET["id"])) {
        
        Array.from(editbtn).forEach(_ => {
         _.addEventListener('click', function(e){
-           parseInt(e.target.parentNode.parentNode.innerText)
+           console.log(parseInt(e.target.parentNode.parentNode.innerText))
         })
       })
     </script>
